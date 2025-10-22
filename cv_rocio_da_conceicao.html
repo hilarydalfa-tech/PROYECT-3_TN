@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rocio Hilary Marisel Da Conceição</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .photo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 15px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .info-item i {
+            color: #667eea;
+            margin-right: 12px;
+            margin-top: 3px;
+            font-size: 1.1em;
+        }
+
+        .info-item strong {
+            color: #333;
+            margin-right: 8px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+
+        .experience-item, .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .period {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .list-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item i {
+            color: #667eea;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.4em;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="photo-container">
+                <!-- Coloca tu foto aquí: <img src="foto.jpg" alt="Rocio Da Conceição"> -->
+                <div class="photo-placeholder">
+                    <i class="fas fa-user" style="font-size: 60px; color: #ccc;"></i>
+                </div>
+            </div>
+            <h1>Rocio Hilary Marisel Da Conceição</h1>
+            <p class="subtitle">Agente Inmobiliaria | Community Manager | Gestión Digital</p>
+            <button class="download-btn" onclick="window.print()">
+                <i class="fas fa-download"></i> Descargar CV en PDF
+            </button>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    Información de Contacto
+                </h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Dirección:</strong><br>
+                            Máximo Paz 2744, CP 3300<br>
+                            Posadas, Misiones
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <a href="https://wa.me/5493764000000" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Enviar WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Experiencia Profesional
+                </h2>
+                <div class="experience-item">
+                    <h3>Agente Inmobiliaria - Propify</h3>
+                    <p class="period">Actualidad</p>
+                    <p>Asesoramiento en compra, venta y alquiler de propiedades. Gestión de carteras de clientes y negociación de operaciones inmobiliarias.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Community Manager</h3>
+                    <p class="period">2023 - Actualidad</p>
+                    <p>Gestión de redes sociales, creación de contenido digital, estrategias de marketing y community engagement.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Educación y Capacitaciones
+                </h2>
+                <div class="education-item">
+                    <h3>Tecnicatura Superior en Administración y Gestión de Recursos Digitales</h3>
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-certificate"></i>
+                    Curso de Formación: Agente Inmobiliario Property Manager
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-certificate"></i>
+                    Curso de Diseño Gráfico y Web
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-certificate"></i>
+                    Curso de Inglés Pre-Intermedio
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    Habilidades
+                </h2>
+                <div class="skills-container">
+                    <span class="skill-badge">Creatividad</span>
+                    <span class="skill-badge">Organización</span>
+                    <span class="skill-badge">Canva</span>
+                    <span class="skill-badge">Marketing Digital</span>
+                    <span class="skill-badge">Gestión de Redes Sociales</span>
+                    <span class="skill-badge">Asesoramiento Inmobiliario</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-language"></i>
+                    Idiomas
+                </h2>
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Español:</strong> Nativo
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Inglés:</strong> Intermedio
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Portugués:</strong> Básico
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Información Adicional
+                </h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Disponibilidad:</strong><br>
+                            Lunes a viernes<br>
+                            Mañana y tarde hasta las 16:00
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <strong>Transporte propio:</strong><br>
+                            No
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <div>
+                            <strong>Disponibilidad de radicación:</strong><br>
+                            Sí
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <strong>Hobbies:</strong><br>
+                            Bailar, videojuegos, vóley
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style media="print">
+        body {
+            background: white;
+            padding: 0;
+        }
+        .container {
+            box-shadow: none;
+            max-width: 100%;
+        }
+        .download-btn {
+            display: none;
+        }
+        .section {
+            page-break-inside: avoid;
+        }
+    </style>
+</body>
+</html>
